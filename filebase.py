@@ -83,7 +83,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    client = Client()  # 207.154.221.93
+    client = Client(host='207.154.221.93')  # 207.154.221.93
     if args.process == 'upload':
         client.sendfile(args.username, args.filename)
 
