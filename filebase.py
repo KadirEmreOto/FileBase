@@ -1,4 +1,5 @@
 import os
+import ast
 import argparse
 
 from base import Socket, flags
@@ -61,18 +62,33 @@ class Client(Socket):
         else:
             print ('[-] error')
 
+    def sendlist(self, user):
+        json = {
+            'dir': user,
+            'process': 'list'
+        }
+
+        self.send(self.server, str(json))
+        response = ast.literal_eval(self.recv(self.server))
+        for it in response:
+            print (it)
+
+
 if __name__ == '__main__':
-    client = Client(host='207.154.221.93')
     parser = argparse.ArgumentParser(description="File Server")
 
-    parser.add_argument('process', choices=['upload', 'download'])
-    parser.add_argument('-f', '--filename', required=True)
+    parser.add_argument('process', choices=['upload', 'download', 'list'])
+    parser.add_argument('-f', '--filename')
     parser.add_argument('-u', '--username', default='default')
 
     args = parser.parse_args()
 
+    client = Client()  # 207.154.221.93
     if args.process == 'upload':
         client.sendfile(args.username, args.filename)
 
-    else:
+    elif args.process == 'download':
         client.recvfile(args.username, args.filename)
+
+    elif args.process == 'list':
+        client.sendlist(args.username)

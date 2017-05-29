@@ -33,6 +33,9 @@ class Server(Socket):
             json = ast.literal_eval(self.recv(conn))
             folder = json.get('dir', 'default')
 
+            if folder and not os.path.isdir(folder):
+                os.mkdir(folder)
+
             print (json)
 
             if json.get('process', None) == 'download':
@@ -55,6 +58,8 @@ class Server(Socket):
                     path = os.path.join(folder, json['filename'])
                     self.download(conn, path)
 
+            elif json.get('process', None) == 'list':
+                self.send(conn, str(os.listdir(folder)))
 
 if __name__ == '__main__':
     server = Server()

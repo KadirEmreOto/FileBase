@@ -24,6 +24,7 @@ Notation rules for setting command-line options.
 * There are two operation:
     *     upload
     *     download
+    *     list
 
 * (Optional) You can upload your files as different user with -u parameter. (default user = default)
     *     --username USER
