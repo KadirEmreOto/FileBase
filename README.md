@@ -5,9 +5,11 @@ FileBase is an open source project that provides **fast** and **easy** file tran
     $ python filebase.py upload -f filebase.py -u KEO
     [+] uploading...
     [+] usage: python filebase.py download -f filebase.py -u KEO
+    
     $ python filebase.py download -f yemre.m4a
     [+] downloading...
     [+] done
+    
     $ python filebase.py download -f wrongfile.py
     [-] file not found!
 
