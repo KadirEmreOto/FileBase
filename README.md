@@ -25,7 +25,7 @@ Notation rules for setting command-line options.
 
 * Argument order is insignificant.
 
-* There are two operation:
+* There are three operation:
     *     upload
     *     download
     *     list
