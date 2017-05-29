@@ -52,7 +52,7 @@ class Client(Socket):
 
         if status == flags['success']:
             print ('[+] downloading...')
-            self.download(self.server, filename)
+            self.download(self.server, os.path.join(user, filename))
             print ('[+] done')
 
         elif status == flags['file_not_found']:
