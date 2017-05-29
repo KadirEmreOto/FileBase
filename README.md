@@ -6,6 +6,10 @@ FileBase is an open source project that provides **fast** and **easy** file tran
     [+] uploading...
     [+] usage: python filebase.py download -f filebase.py -u KEO
     
+    $ python filebase.py list -u KEO
+    filebase.py
+    yemre.m4a
+    
     $ python filebase.py download -f yemre.m4a
     [+] downloading...
     [+] done
@@ -26,12 +30,12 @@ Notation rules for setting command-line options.
     *     download
     *     list
 
-* (Optional) You can upload your files as different user with -u parameter. (default user = default)
+* You can upload your files as different user with -u parameter. (default user = default)
     *     --username USER
     *     --username=USER
     *     -u USER
 
-* (Required) Three ways to set the filename or path (filename for downloading, path for uploading)
+* Three ways to set the filename or path (filename for downloading, path for uploading)
     *     --filename value
     *     --filename=value
     *     -f value
