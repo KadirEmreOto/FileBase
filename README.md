@@ -2,7 +2,6 @@
 FileBase is an open source project that provides **fast** and **easy** file transmission.
 
 ### Synopsis
-    $ python filebase.py -h
     $ python filebase.py upload -f filebase.py -u KEO
     [+] uploading...
     [+] usage: python filebase.py download -f filebase.py -u KEO
