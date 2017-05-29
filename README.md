@@ -15,6 +15,7 @@ FileBase is an open source project that provides **fast** and **easy** file tran
 ### Notation Rules
 
 Notation rules for setting command-line options.
+    
     usage: filebase.py [-h] -f FILENAME [-u USERNAME] {upload,download}
 
 * Argument order is insignificant.
